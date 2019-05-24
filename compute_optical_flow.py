@@ -1,3 +1,4 @@
+#coding：utf-8
 import copy
 import os
 import cv2
@@ -44,6 +45,7 @@ while(1):
     frame_num += 1
     ret, frame2 = cap.read()
     grey = cv2.cvtColor(frame2,cv2.COLOR_BGR2GRAY)
+    #计算光流
     flow = cv2.calcOpticalFlowFarneback(prev_grey,grey, None, 0.702, 5, 10, 2, 7, 1.5, cv2.OPTFLOW_FARNEBACK_GAUSSIAN )
    
     flow0, flow1 = cv2.split(flow)
